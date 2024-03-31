@@ -1,0 +1,34 @@
+#floaters {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.5;
+  overflow: hidden;
+  font-size:50px;
+  font-family: chewy, serif;
+}
+
+#floaters > * {
+  user-select: none;
+  position: absolute;
+  animation: floater-rotate 10s linear infinite, floater-appear 20s linear forwards;
+}
+
+#floaters .emoji {
+  font-size: 100px;
+}
+
+@keyframes floater-rotate {
+  0%, 100%, 50% { transform: rotate(0deg); }
+  25% { transform: rotate(45deg); }
+  75% { transform: rotate(-45deg); }
+}
+
+@keyframes floater-appear {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 0.5; }
+}

@@ -1,0 +1,117 @@
+:root {
+  --color-1: rgb(253,45,133);
+  --color-2: rgb(34,193,195);
+  --color-3: rgb(253,187,45);
+  --color-4: rgb(34,195,64);
+  --color-6: rgb(195,34,34);
+  --color-7: rgb(34,94,195);
+  --color-7: rgb(253,133,45);
+  --color-8: rgb(24, 138, 43);
+}
+
+@font-face {
+  font-family: chewy;
+  src: url(../fonts/Chewy.ttf);
+}
+
+.font-chewy {
+  font-family: 'chewy', serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: rgb(34,193,195);
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+* {
+  z-index: 1000;
+  position: relative;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+
+.spacer-20 { width: 20px; }
+.spacer-30 { width: 30px; }
+.spacer-40 { width: 40px; }
+.spacer-80 { width: 80px; }
+
+#action-buttons-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  user-select: none;
+  opacity: 0;
+  visibility: collapse;
+  animation: appear 1s 4.5s ease-in forwards;
+}
+
+.action-button {
+  border-radius: 100%;
+  font-size: 110px;
+  line-height: 95px;
+  font-family: 'chewy', serif;
+  height: 110px;
+  width: 110px;
+  text-align: center;
+  box-shadow: 0px 0px 3px 4px #4a4a4a;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.action-button.small {
+  font-size: 30px;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.action-button:hover { box-shadow: 0px 0px 5px 6px #4a4a4a; }
+
+#add.action-button { background-color: #1e7b01; }
+#reset.action-button.small { margin-bottom: 10px; background-color: rgb(193, 164, 49); }
+#about.action-button.small { background-color: rgb(58, 127, 255); }
+#locale.action-button.small { margin-top: 10px; background-color: rgb(219, 58, 255); }
+#remove.action-button { background-color: #b22e02; } 
+
+#locale-options.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+#locale-options {
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 4px #4a4a4a;
+  bottom: 110%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 25px;
+  background-color: rgb(246, 233, 207);
+  color: black;
+  visibility: collapse;
+  opacity: 0;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+.locale-option {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.locale-option:hover {
+  background-color: rgb(209, 200, 183);
+}
+
+@keyframes appear {
+  from { opacity: 0; visibility: collapse; }
+  to { opacity: 1; visibility: visible; }
+}

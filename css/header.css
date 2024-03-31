@@ -1,0 +1,95 @@
+#header-container {
+  font-family: chewy, 'serif';
+  font-size: 90px;
+  color: rgb(246, 233, 207);
+  text-shadow: 7px 9px 10px black;
+  width: 100%;
+  position: relative;
+  height: 300px;
+  user-select: none;
+}
+
+#header-word-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-word {
+  opacity: 0;
+  visibility: collapse;
+}
+
+#header-word-group-1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+#header-word-1 {
+  text-align: right;
+  transform: rotateZ(354deg);
+  animation: appear 1s 0.5s ease-in forwards,
+             word-increase-size-1 1s 0.5s ease-in forwards,
+             word-shake-bounce-1 6s 1.5s ease-in infinite,
+             word-pulsate-size-1 2s 1.5s ease-in infinite
+             ;
+}
+#header-word-2 { 
+  text-align: left;
+  transform: rotateZ(7deg);
+  animation: appear 1s 1.5s ease-in forwards,
+             word-increase-size-1 1s 1.5s ease-in forwards,
+             word-shake-bounce-2 6s 2.8s ease-in infinite,
+             word-pulsate-size-1 2s 2.8s ease-in infinite
+             ;
+}
+#header-word-3 { 
+  text-align: center;
+  transform: rotate(352deg);
+  animation: appear 1s 2.5s ease-in forwards,
+             word-increase-size-2 1s 2.5s ease-in forwards,
+             word-shake-bounce-3 6s 4s ease-in infinite,
+             word-pulsate-size-2 2s 4s ease-in infinite
+             ;
+}
+
+@keyframes word-increase-size-1 {
+  0% { font-size: 60px; }
+  70% { font-size: 95px; }
+  100% { font-size: 90px; }
+}
+
+@keyframes word-increase-size-2 {
+  0% { font-size: 80px; }
+  70% { font-size: 115px; }
+  100% { font-size: 110px; }
+}
+
+@keyframes word-pulsate-size-1 {
+  0%, 100% { font-size: 90px; }
+  50% { font-size: 93px; }
+}
+
+@keyframes word-pulsate-size-2 {
+  0%, 100% { font-size: 110px; }
+  50% { font-size: 113px; }
+}
+
+@keyframes word-shake-bounce-1 {
+  0%, 100% { left: 0px; transform: rotateZ(354deg); }
+  91%, 93%, 95%, 97%, 99% { left: 2px; transform: rotateZ(352deg); }
+  92%, 94%, 96%, 98% { left: -2px; transform: rotateZ(356deg); }
+}
+
+@keyframes word-shake-bounce-2 {
+  0%, 100% { left: 0px; transform: rotateZ(7deg); }
+  91%, 93%, 95%, 97%, 99% { left: -2px; transform: rotateZ(5deg); }
+  92%, 94%, 96%, 98% { left: 2px; transform: rotateZ(9deg); }
+}
+
+@keyframes word-shake-bounce-3 {
+  0%, 100% { left: 0px; transform: rotate(352deg); }
+  91%, 93%, 95%, 97%, 99% { left: 2px; transform: rotate(350deg); }
+  92%, 94%, 96%, 98% { left: -2px; transform: rotate(354deg); }
+}
